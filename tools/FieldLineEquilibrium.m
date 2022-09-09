@@ -8,17 +8,17 @@
 
 % default input parameters:
 A = 0.161604;
-x0 = 1.2;
+x0 = 0.5;
 xrho = 2;
 xB = 0.8;
 B1 = 3;
 B2 = 1.8;
 q = 3.25;
 
-h=0.01;
-zmax=1;
+h=0.005;
+zmax=0.5;
 N=zmax/h;
-z0=0
+z0=0;
 
 % Integration:
 f=EquilibriumPositionStep(xrho,xB,A,B1,B2,q,x0);
@@ -30,6 +30,6 @@ plot(zgrit,xequil)
 
 
 function [dxdz] = EquilibriumPositionStep(xrho,xB,A,B1,B2,q,x0)
-    dxdz=@(z,x) A^(-1) *sqrt(A^2*q^2 + (1+A^2 * q^2)*((x-x0)/(cosh(x0-xrho))  - (tanh(x-xrho)-tanh(x0-xrho))/(B1-(B2/(cosh(x0-xB)^2)))))
+    dxdz=@(z,x) A^(-1) *sqrt(A^2*q^2 + (1+A^2 * q^2)*((x-x0)/(cosh(x0-xrho)^2)  - (tanh(x-xrho)-tanh(x0-xrho))/(B1-(B2/(cosh(x0-xB)^2)))));
 end
 
