@@ -6,6 +6,7 @@
 %
 % input parameters are: x_rho, x_B, A, B1, B2, q, x0
 
+% first order pde 
 function[zgrit,xequil]=FieldLineEquilibriumStep(xrho,xB,A,B1,B2,q,z0,x0,h,N)
 
 % Integration:
@@ -21,3 +22,4 @@ feps=EquilibriumPositionStep(xrho,xB,A,B1,B2,q,x0);
             -(tanh(x-xrho)-tanh(x0-xrho)))/( B1-(B2/((cosh(x0-xB))^2)) ) );
     end
 end
+

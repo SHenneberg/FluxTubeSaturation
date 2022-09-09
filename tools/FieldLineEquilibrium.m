@@ -20,16 +20,21 @@ B1 = 3;
 B2 = 1.8;
 %q=3.25;
 %q=4.5;
-q=6.15;
+q=7.23;
 %q = 25.25;
 
-h=0.05;
-zmax=0.5;
+h=0.01;
+zmax=1.;
 N=zmax/h;
 z0=0;
 
-[zgritQ,xequilQ]=FieldLineEquilibriumStep(xrho,xB,A,B1,B2,q,z0,x0,h,N);
+% second order ODE:
+[zgritQ,xequilQ]=FieldLineEquilibriumStep2(xrho,xB,A,B1,B2,q,z0,x0,h,N);
 plot(zgritQ,xequilQ)
+
+% first order ODE:
+%[zgritQ1,xequilQ1]=FieldLineEquilibriumStep(xrho,xB,A,B1,B2,q,z0,x0,h,N);
+%plot(zgritQ1,xequilQ1,'--',zgritQ,xequilQ)
 
 
 
