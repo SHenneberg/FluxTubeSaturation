@@ -16,5 +16,6 @@ function [x,y]= RungeKuttaSolver(f,x0, y0, h, N)
         
         x(i+1)=x(i)+h;
         y(i+1)=y(i)+1/6*(k1+2*k2+2*k3+k4);
-
+    end
+    
 end
