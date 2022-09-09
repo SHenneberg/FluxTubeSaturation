@@ -1,6 +1,8 @@
-% Code which tests RungeKutteSolver (Or other ODE solvers)
+% Code which tests RungeKutteSolver (Or other 1st order ODE solvers)
 % Calculates solution of RungeKutteSolver with some analytic solution
 addpath('../tools');
+clear all
+close all
 f=@(x,y) x+y;
 x0=0;
 y0=0;
