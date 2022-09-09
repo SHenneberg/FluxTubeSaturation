@@ -1,6 +1,6 @@
 % SecantMethod: root finding algorithm
 
-function[xroot]= SecantMethod(f,x0,x1,itr)
+function[xroot,success,i]= SecantMethod(f,x0,x1,itr,tol)
     success=0;
     for i=1:itr
         x2=(x0*f(x1)-x1*f(x0))/(f(x1)-f(x0));
